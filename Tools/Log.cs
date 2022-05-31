@@ -29,12 +29,11 @@
 
         private void Save(string message)
         {
-
             File.AppendAllText(_path, message + Environment.NewLine);
         }
         public void Info(string message)
         {
-            string pattern = $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:fff")} INFO {message}";
+            string pattern = $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss,fff")} [#process] INFO  Class:Method - {message}";
             Save(pattern);
         }
         

@@ -1,5 +1,4 @@
 ﻿using DesignPatterns.FactoryPattern;
-using System;
 
 namespace DesignPatterns
 {
