@@ -6,3 +6,18 @@ Entro a Index
 Entro a Privacy
 Entro a Index
 2022-05-31 20:23:21,968 [#process] INFO  Class:Method - Entro a Index
+2022-06-02 20:23:57,838 [#process] INFO  Class:Method - Entro a Index
+2022-06-02 20:32:01,983 [#process] INFO  Class:Method - Entro a Index
+2022-06-02 20:32:12,482 [#process] INFO  Class:Method - Entro a Index
+2022-06-02 20:32:13,673 [#process] INFO  Class:Method - Entro a Index
+2022-06-02 20:32:14,300 [#process] INFO  Class:Method - Entro a Privacy
+2022-06-02 20:35:54,886 [#process] INFO  Class:Method - Entro a Index
+2022-06-02 20:36:01,242 [#process] INFO  Class:Method - Entro a Privacy
+2022-06-02 20:54:36,024 [#process] INFO  Class:Method - Entro a Index
+2022-06-02 22:48:33,696 [#process] INFO  Class:Method - Entro a Index
+2022-06-02 22:53:51,672 [#process] INFO  Class:Method - Entro a Index
+2022-06-02 23:16:45,998 [#process] INFO  Class:Method - Entro a Index
+2022-06-02 23:16:48,992 [#process] INFO  Class:Method - Entro a ProductDetail
+2022-06-02 23:16:50,110 [#process] INFO  Class:Method - Entro a Privacy
+2022-06-02 23:16:51,223 [#process] INFO  Class:Method - Entro a Index
+2022-06-02 23:16:52,111 [#process] INFO  Class:Method - Entro a ProductDetail

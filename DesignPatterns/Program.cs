@@ -1,4 +1,5 @@
-﻿using DesignPatterns.FactoryPattern;
+﻿using DesignPatterns.DependencyInjection;
+using DesignPatterns.FactoryPattern;
 
 namespace DesignPatterns
 {
@@ -19,15 +20,22 @@ namespace DesignPatterns
 
             ///************************************
 
-            //FACTORY METHOD
-            SaleFactory storeSaleFactory = new StoreSaleFactory(10);
-            SaleFactory internetSaleFactory = new InternetSaleFactory(2);
+            ////FACTORY METHOD
+            //SaleFactory storeSaleFactory = new StoreSaleFactory(10);
+            //SaleFactory internetSaleFactory = new InternetSaleFactory(2);
 
-            ISale sale1 = storeSaleFactory.GetSale();
-            sale1.Sell(15);
+            //ISale sale1 = storeSaleFactory.GetSale();
+            //sale1.Sell(15);
 
-            ISale sale2 = internetSaleFactory.GetSale();
-            sale2.Sell(15);
+            //ISale sale2 = internetSaleFactory.GetSale();
+            //sale2.Sell(15);
+
+            ///************************************
+
+            //DEPENDENCY INJECTION
+            var beer = new Beer("Pikantus", "Erlinger");
+            var drinkWithBeer = new DrinkWithBeer(10, 1, beer);
+            drinkWithBeer.Build();
         }
     }
 }
