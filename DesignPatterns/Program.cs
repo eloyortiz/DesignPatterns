@@ -42,20 +42,48 @@ namespace DesignPatterns
             ///************************************
 
             //REPOSITORY
+            //using (var dbContext = new DesignPatternsContext())
+            //{
+            //    var beerRepo = new BeerRepository(dbContext);
+                
+            //    var beer = new Beer();
+            //    beer.Name = "Corona";
+            //    beer.Style = "Pilsner";
+                
+            //    beerRepo.Add(beer);
+            //    beerRepo.Save();
+                
+            //    foreach(var b in beerRepo.GetAll())
+            //    {
+            //        Console.WriteLine(b.Name);
+            //    }
+            //}
+
+            //REPOSITORY GENERICS
             using (var dbContext = new DesignPatternsContext())
             {
-                var beerRepo = new BeerRepository(dbContext);
-                
-                var beer = new Beer();
-                beer.Name = "Corona";
-                beer.Style = "Pilsner";
-                
-                beerRepo.Add(beer);
-                beerRepo.Save();
-                
-                foreach(var b in beerRepo.GetAll())
+                var beerRepository = new Repository<Beer>(dbContext);
+
+                var beer = new Beer() { Name = "Fuller", Style = "Strong Ale" };
+                beerRepository.Add(beer);
+                beerRepository.Save();
+
+                Console.WriteLine($"BEERS");
+                foreach (var b in beerRepository.GetAll())
                 {
-                    Console.WriteLine(b.Name);
+                    Console.WriteLine($"#{b.BeerId} -> {b.Name}");
+                }
+
+                var brandRepository = new Repository<Brand>(dbContext);
+
+                var brand = new Brand() { Name = "Erdinger" };
+                brandRepository.Add(brand);
+                brandRepository.Save();
+
+                Console.WriteLine($"BRANDS");
+                foreach (var b in brandRepository.GetAll())
+                {
+                    Console.WriteLine($"#{b.BrandId} -> {b.Name}");
                 }
             }
         }

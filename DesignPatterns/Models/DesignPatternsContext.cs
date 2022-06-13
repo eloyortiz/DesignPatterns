@@ -17,6 +17,7 @@ namespace DesignPatterns.Models
         }
 
         public virtual DbSet<Beer> Beers { get; set; } = null!;
+        public virtual DbSet<Brand> Brands { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -38,6 +39,15 @@ namespace DesignPatterns.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.Style)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Brand>(entity =>
+            {
+                entity.ToTable("Brand");
+
+                entity.Property(e => e.Name)
                     .HasMaxLength(50)
                     .IsUnicode(false);
             });
