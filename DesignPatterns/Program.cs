@@ -1,5 +1,7 @@
-﻿using DesignPatterns.DependencyInjection;
-using DesignPatterns.FactoryPattern;
+﻿//using DesignPatterns.DependencyInjection;
+//using DesignPatterns.FactoryPattern;
+using DesignPatterns.Models;
+using DesignPatterns.RepositoryPattern;
 
 namespace DesignPatterns
 {
@@ -33,9 +35,29 @@ namespace DesignPatterns
             ///************************************
 
             //DEPENDENCY INJECTION
-            var beer = new Beer("Pikantus", "Erlinger");
-            var drinkWithBeer = new DrinkWithBeer(10, 1, beer);
-            drinkWithBeer.Build();
+            //var beer = new Beer("Pikantus", "Erlinger");
+            //var drinkWithBeer = new DrinkWithBeer(10, 1, beer);
+            //drinkWithBeer.Build();
+
+            ///************************************
+
+            //REPOSITORY
+            using (var dbContext = new DesignPatternsContext())
+            {
+                var beerRepo = new BeerRepository(dbContext);
+                
+                var beer = new Beer();
+                beer.Name = "Corona";
+                beer.Style = "Pilsner";
+                
+                beerRepo.Add(beer);
+                beerRepo.Save();
+                
+                foreach(var b in beerRepo.GetAll())
+                {
+                    Console.WriteLine(b.Name);
+                }
+            }
         }
     }
 }
