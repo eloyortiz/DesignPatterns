@@ -1,4 +1,7 @@
+using DesignPatterns.Models.Data;
+using DesignPatterns.Repository;
 using DessingPatternsAsp.Configuration;
+using Microsoft.EntityFrameworkCore;
 using Tools.Earnings;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +20,14 @@ builder.Services.AddTransient((factory) =>
         builder.Configuration.GetSection("MyConfig").GetValue<decimal>("Extra")
         );
 });
+
+//INFO: INYECTA CONTEXTO DE BBDD MEDIANTE LA CADENA DE CONEXIÓN DEL APPSETTING "Connection"
+builder.Services.AddDbContext<DesignPatternsContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Connection"));
+});
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>)); //INFO: SE INYECTA EL REPOSITORIO PARA USAR LA CLASE REPOSITORY EN TODOS LOS CONTROLADORES
 
 var app = builder.Build();
 

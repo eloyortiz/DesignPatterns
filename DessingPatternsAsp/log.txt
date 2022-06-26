@@ -21,3 +21,4 @@ Entro a Index
 2022-06-02 23:16:50,110 [#process] INFO  Class:Method - Entro a Privacy
 2022-06-02 23:16:51,223 [#process] INFO  Class:Method - Entro a Index
 2022-06-02 23:16:52,111 [#process] INFO  Class:Method - Entro a ProductDetail
+2022-06-26 12:42:10,370 [#process] INFO  Class:Method - Entro a Index

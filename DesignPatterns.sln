@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{52C609F5-37CE-4A48-82AD-8E76FB778821}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{52C609F5-37CE-4A48-82AD-8E76FB778821}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DessingPatternsAsp", "DessingPatternsAsp\DessingPatternsAsp.csproj", "{3B89C4D5-EAC5-4E07-A10C-68D83F374497}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DessingPatternsAsp", "DessingPatternsAsp\DessingPatternsAsp.csproj", "{3B89C4D5-EAC5-4E07-A10C-68D83F374497}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{359A0A49-5CC3-4FCA-B789-238BB2B1017E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools", "Tools\Tools.csproj", "{359A0A49-5CC3-4FCA-B789-238BB2B1017E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Models", "DesignPatterns.Models\DesignPatterns.Models.csproj", "{6E58DA65-79E4-46B9-AE62-234AD21CF964}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Repository", "DesignPatterns.Repository\DesignPatterns.Repository.csproj", "{A252BF81-8562-4620-9F47-F3F58B70527E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{359A0A49-5CC3-4FCA-B789-238BB2B1017E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{359A0A49-5CC3-4FCA-B789-238BB2B1017E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{359A0A49-5CC3-4FCA-B789-238BB2B1017E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E58DA65-79E4-46B9-AE62-234AD21CF964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E58DA65-79E4-46B9-AE62-234AD21CF964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E58DA65-79E4-46B9-AE62-234AD21CF964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E58DA65-79E4-46B9-AE62-234AD21CF964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A252BF81-8562-4620-9F47-F3F58B70527E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A252BF81-8562-4620-9F47-F3F58B70527E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A252BF81-8562-4620-9F47-F3F58B70527E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A252BF81-8562-4620-9F47-F3F58B70527E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
