@@ -2,6 +2,7 @@
 //using DesignPatterns.FactoryPattern;
 using DesignPatterns.Models;
 using DesignPatterns.RepositoryPattern;
+using DesignPatterns.StrategyPattern;
 using DesignPatterns.UnitOfWorkPattern;
 
 namespace DesignPatterns
@@ -88,21 +89,41 @@ namespace DesignPatterns
 
             ///************************************
             ///UNIT OF WORK
+
+            //using( var context = new DesignPatternsContext())
+            //{
+            //    var unitOfWork = new UnitOfWork(context);
+
+            //    var beers = unitOfWork.Beers;
+            //    var beer = new Beer() { Name = "Mahou", Style = "Porter" };
+            //    beers.Add(beer);
+
+            //    var brands = unitOfWork.Brands;
+            //    var brand = new Brand() { Name = "Mahou" };
+            //    brands.Add(brand);
+
+            //    unitOfWork.Save();
+            //}
+
+            ///************************************
+            ///STRATEGY
             
-            using( var context = new DesignPatternsContext())
-            {
-                var unitOfWork = new UnitOfWork(context);
+            IStrategy carStrategy = new CarStrategy();
+            IStrategy motoStrategy = new MotoStrategy();
+            IStrategy lorryStrategy = new LorryStrategy();
 
-                var beers = unitOfWork.Beers;
-                var beer = new Beer() { Name = "Mahou", Style = "Porter" };
-                beers.Add(beer);
+            var context = new Context(carStrategy);
+            context.Run();
 
-                var brands = unitOfWork.Brands;
-                var brand = new Brand() { Name = "Mahou" };
-                brands.Add(brand);
+            context.Strategy = motoStrategy;
+            context.Run();
 
-                unitOfWork.Save();
-            }
+            context.Strategy = lorryStrategy;
+            context.Run();
+
+            context.Strategy = carStrategy;
+            context.Run();
+
 
         }
     }
