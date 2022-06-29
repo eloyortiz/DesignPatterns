@@ -1,5 +1,6 @@
 ﻿//using DesignPatterns.DependencyInjectionPattern;
 //using DesignPatterns.FactoryPattern;
+using DesignPatterns.BuilderPattern;
 using DesignPatterns.Models;
 using DesignPatterns.RepositoryPattern;
 using DesignPatterns.StrategyPattern;
@@ -107,24 +108,36 @@ namespace DesignPatterns
 
             ///************************************
             ///STRATEGY
-            
-            IStrategy carStrategy = new CarStrategy();
-            IStrategy motoStrategy = new MotoStrategy();
-            IStrategy lorryStrategy = new LorryStrategy();
 
-            var context = new Context(carStrategy);
-            context.Run();
+            //IStrategy carStrategy = new CarStrategy();
+            //IStrategy motoStrategy = new MotoStrategy();
+            //IStrategy lorryStrategy = new LorryStrategy();
 
-            context.Strategy = motoStrategy;
-            context.Run();
+            //var context = new Context(carStrategy);
+            //context.Run();
 
-            context.Strategy = lorryStrategy;
-            context.Run();
+            //context.Strategy = motoStrategy;
+            //context.Run();
 
-            context.Strategy = carStrategy;
-            context.Run();
+            //context.Strategy = lorryStrategy;
+            //context.Run();
 
+            //context.Strategy = carStrategy;
+            //context.Run();
 
+            ///************************************
+            ///BUILDER
+
+            var builder = new PreparedAlcoholicDrinkConcreteBuilder();
+
+            var barmanDirector = new BarmanDirector(builder);
+            barmanDirector.PrepareMargarita();
+            var preparedDrink = builder.GetPreparedDrink();
+            Console.WriteLine(preparedDrink.Result);
+
+            barmanDirector.PreparePinaColada();
+            preparedDrink = builder.GetPreparedDrink();
+            Console.WriteLine(preparedDrink.Result);
         }
     }
 }
