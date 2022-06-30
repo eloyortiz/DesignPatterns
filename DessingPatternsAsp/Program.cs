@@ -3,6 +3,7 @@ using DesignPatterns.Repository;
 using DessingPatternsAsp.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Tools.Earnings;
+using Tools.Generator;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,8 +29,8 @@ builder.Services.AddDbContext<DesignPatternsContext>(options =>
 });
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>)); //INFO: SE INYECTA EL REPOSITORIO PARA USAR LA CLASE REPOSITORY EN TODOS LOS CONTROLADORES
-
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<GeneratorConcreteBuilder>();
 
 var app = builder.Build();
 
