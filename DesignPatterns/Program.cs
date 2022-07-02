@@ -1,10 +1,12 @@
 ﻿//using DesignPatterns.DependencyInjectionPattern;
 //using DesignPatterns.FactoryPattern;
-using DesignPatterns.BuilderPattern;
-using DesignPatterns.Models;
-using DesignPatterns.RepositoryPattern;
-using DesignPatterns.StrategyPattern;
-using DesignPatterns.UnitOfWorkPattern;
+//using DesignPatterns.BuilderPattern;
+//using DesignPatterns.Models;
+//using DesignPatterns.RepositoryPattern;
+//using DesignPatterns.StrategyPattern;
+//using DesignPatterns.UnitOfWorkPattern;
+using DesignPatterns.StatePattern;
+using System;
 
 namespace DesignPatterns
 {
@@ -128,16 +130,38 @@ namespace DesignPatterns
             ///************************************
             ///BUILDER
 
-            var builder = new PreparedAlcoholicDrinkConcreteBuilder();
+            //var builder = new PreparedAlcoholicDrinkConcreteBuilder();
 
-            var barmanDirector = new BarmanDirector(builder);
-            barmanDirector.PrepareMargarita();
-            var preparedDrink = builder.GetPreparedDrink();
-            Console.WriteLine(preparedDrink.Result);
+            //var barmanDirector = new BarmanDirector(builder);
+            //barmanDirector.PrepareMargarita();
+            //var preparedDrink = builder.GetPreparedDrink();
+            //Console.WriteLine(preparedDrink.Result);
 
-            barmanDirector.PreparePinaColada();
-            preparedDrink = builder.GetPreparedDrink();
-            Console.WriteLine(preparedDrink.Result);
+            //barmanDirector.PreparePinaColada();
+            //preparedDrink = builder.GetPreparedDrink();
+            //Console.WriteLine(preparedDrink.Result);
+
+            ///-----------------------------------
+            ///STATE
+            ///
+            var customerContext = new CustomerContext();
+            Console.WriteLine(customerContext.GetState());
+            customerContext.Request(100);
+            Console.WriteLine(customerContext.GetState());
+
+            customerContext.Request(50);
+            Console.WriteLine(customerContext.GetState());
+
+           
+            customerContext.Request(100);
+            Console.WriteLine(customerContext.GetState());
+
+            customerContext.Request(50);
+            Console.WriteLine(customerContext.GetState());
+
+            customerContext.Request(50);
+            Console.WriteLine(customerContext.GetState());
+
         }
     }
 }
